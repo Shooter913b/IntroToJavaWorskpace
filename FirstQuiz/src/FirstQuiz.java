@@ -1,18 +1,46 @@
 public class FirstQuiz {
-    //TODO 4-create test code to demonstrate your understanding of not crashing the program for all cases
+
     public static void main(String[] args){
-
+        System.out.println(formatDate(2019,"jan",23));
+        System.out.println(convertFtoC(433)+ "degrees celsius");
+        convertTime(999999999);
     }
-    //TODO 1-given a year, month and day, return a string that reads "Today is 'month' 'day', 'year'"
+
     public static String formatDate(int year, String month, int day){
-
+        return("Today is "+month+" "+day+", "+year);
     }
-    //TODO 2-given a double fahrenheit return the appropriate celsius
+
     public static double convertFtoC(double f){
-
+        return (double)Math.round(((f- 32) * 5/9)*100)/100;
     }
-    //TODO 3-given a time in seconds, print it into days, hours, mins, seconds and if its singular it should be singular and if its 0 its should not be displayed
-    public static void convertTime(int seos){
 
+    public static void convertTime(int secs){
+        int a = secs/86400;
+        int a2= secs-a*86400;
+        int b = a2/3600;
+        int b2 = a2-b*3600;
+        int c = b2/60;
+        int c2 = b2-c*60;
+        int x=a*86400;
+        int y=b*3600;
+        int z=c*60;
+        int d= secs-x-y-z;
+        String hi1=" day ";
+        String hi2=" hour ";
+        String hi3=" minute ";
+        String hi4=" second ";
+        if(a>1){
+        hi1=" days " ;
+        }
+        if(b>1){
+            hi2=" hours " ;
+        }
+        if(c>1){
+            hi3=" minutes " ;
+        }
+        if(d>1){
+            hi4=" seconds " ;
+        }
+        System.out.println(a+hi1+b+hi2+c+hi3+d+hi4);
     }
 }
