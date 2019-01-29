@@ -3,7 +3,7 @@ public class FirstQuiz {
     public static void main(String[] args){
         System.out.println(formatDate(2019,"jan",23));
         System.out.println(convertFtoC(433)+ "degrees celsius");
-        convertTime(999999999);
+        convertTime(1500);
     }
 
     public static String formatDate(int year, String month, int day){
